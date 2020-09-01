@@ -6,6 +6,10 @@
     (function ($) {
     "use strict"; // Start of use strict
 
+    $('a.stop-video').click(function(){
+        $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+    });
+
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
         if (
